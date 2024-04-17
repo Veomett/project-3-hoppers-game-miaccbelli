@@ -1,0 +1,30 @@
+name: Autograding Tests
+'on':
+- push
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Hoppers Game test
+      id: hoppers-game-test
+      uses: education/autograding-command-grader@v1
+      with:
+        test-name: Hoppers Game test
+        setup-command: mvn compile
+        command: mvn test
+        timeout: 3
+    - name: Autograding Reporter
+      uses: education/autograding-grading-reporter@v1
+      env:
+        HOPPERS-GAME-TEST_RESULTS: "${{steps.hoppers-game-test.outputs.result}}"
+      with:
+        runners: hoppers-game-test
