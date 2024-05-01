@@ -112,6 +112,14 @@ public class FrogArrangement {
              */
     }
 
+
+    /***
+     * TODO: implement additional methods of your choosing
+     * As stated in the project description, I had the following additional methods:
+     * canHop, hop, isWinningState
+     * You choose the methods you want and the signatures that you want for your methods.
+     */
+
     public boolean canHop(int[] from, int[] over, int[] to){
         /***
          * need to check 3 things:
@@ -125,12 +133,6 @@ public class FrogArrangement {
         // construct the new frog arrangement, jumping from 'from' over 'over' and to 'to'
         // use constructor, return the resulting arrangement
     }
-        /***
-         * TODO: implement additional methods of your choosing
-         * As stated in the project description, I had the following additional methods:
-         * canHop, hop, isWinningState
-         * You choose the methods you want and the signatures that you want for your methods.
-         */
 
     public void printFrogs(){
             /***
@@ -138,6 +140,11 @@ public class FrogArrangement {
              * See the Project Description on Canvas to see how it should look.
              */
     }
+
+
+    /***
+     * TODO: DO NOT TOUCH THESE, ONLY ADD JAVADOC NOTES FOR EACH METHOD
+     */
     private int calculateHash(int[][] f){
             /***
              * TODO: DO NOT TOUCH THIS METHOD!
