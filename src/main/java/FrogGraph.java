@@ -55,7 +55,9 @@ public class FrogGraph {
      * frogNeighbors.get(someFrogs) contains otherFrogs, then frogNeighbors.get(otherFrogs)
      * should contain someFrogs
      */
-    HashMap<FrogArrangement, Queue<FrogArrangement>> frogNeighbors; // adjacent list, if a frog not a key in frogNeighbors, then it hasn't been visited yet
+    HashMap<FrogArrangement, Queue<FrogArrangement>> frogNeighbors;
+    // this is an adjacency list
+    // if a frog not a key in frogNeighbors, then it hasn't been visited yet
     /***
      * You don't *need* to have distFromStarting, but it doesn't hurt, and may be helpful
      * in debugging.  It should give the distance that a frog arrangement is from the startingArrangement.
@@ -77,7 +79,14 @@ public class FrogGraph {
          * predecessorMap, frogNeighbors, distFromStarting (if used), and winningArrangements
          */
     }
-    protected void createGraph(FrogArrangement frog){
+    protected void createGraph(FrogArrangement frog){ // remember! this is a BFS search method
+        FrogArrangement curFrogs = startingArrangement;
+        Queue<FrogArrangement> curQueue = new ArrayDeque<>();
+        frogNeighbors.put(curFrogs, curQueue); // adding currFrogs into frog neighbors
+        Queue<FrogArrangement> bfsQueue = new ArrayDeque<>();
+        bfsQueue.add(curFrogs); // all setting us up to do a bfs
+
+
         /***
          * TODO: implement this method.
          * The FrogArrangement frog is the startingArrangement.
