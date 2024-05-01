@@ -86,6 +86,22 @@ public class FrogGraph {
         Queue<FrogArrangement> bfsQueue = new ArrayDeque<>();
         bfsQueue.add(curFrogs); // all setting us up to do a bfs
 
+        // do the following in a while loop (while the bfsQueue is not empty):
+        // remove from queue and do the following:
+        for (int[] from : FrogArrangement.hopOptions.keySet()){
+            for (int[] over : FrogArrangement.hopOptions.get(from).keySet()){
+                int[] to = FrogArrangement.hopOptions.get(from).get(over);
+                // can we do that hop on curFrogs? (call canHop() method from FrogArrangement)
+                // if yes (it can hop): create newFrogs by doing the hop
+                // if newFrogs has not been seen before (aka must check if newFrogs is a key in the predecessor Map)
+                    // add it to bfsQueue
+                    // add curFrogs as its predecessor
+                    // check to see if it is a winning state (if so, add to winning Arrangements)
+                    // create Queue in the neighborMap, corresponding to key newFrogs
+                // add newFrogs as neighbor of curFrogs
+                // add curFrogs as neighbor of newFrogs
+            }
+        }
 
         /***
          * TODO: implement this method.
@@ -99,6 +115,10 @@ public class FrogGraph {
         /***
          * TODO: implement this method.
          * See the project description on Canvas to see how the print should look.
+         * MIGHT WANT TO USE A STACK TO PRINT THE STEPS/MOVES BACKWARDS FROM THE WINNING ARRANGEMENT TO
+         * THE STARTING ARRANGEMENT
+         * USING THE PREDECESSOR OF THE WINNING ARRANGEMENT TO THE PREVIOUS STEP AND THEN ITS PREVIOUS STEP, ETC
+         * PRINT FROM THE STACK (LIFO)
          */
     }
     public boolean areAdjacent(FrogArrangement frogs1, FrogArrangement frogs2){
