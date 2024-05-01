@@ -129,9 +129,16 @@ public class FrogArrangement {
          */
     }
 
-    public FrogArrangement (int[] from, int[] over, int[] to){
+    public FrogArrangement (int[] from, int[] over, int[] to){ // is this the hop() method?
         // construct the new frog arrangement, jumping from 'from' over 'over' and to 'to'
         // use constructor, return the resulting arrangement
+    }
+
+    public boolean isWinningState(){
+        // check if there is only one frog left
+        // can do this by summing all the entries of the adjacency list
+        // if it equals 1, then it is a winning arrangement
+        // if anything else, then it is not a winning arrangement
     }
 
     public void printFrogs(){
