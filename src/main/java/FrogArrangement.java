@@ -17,6 +17,90 @@ public class FrogArrangement {
                  * Project Description on Canvas for additional details.
                  */
             }});
+
+        put(new int[]{0, 2}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{0, 4}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{1, 1}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{1, 3}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{2, 0}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{2, 2}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{2, 4}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{3, 1}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{3, 3}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{4, 0}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{4, 2}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
+
+        put(new int[]{4, 4}, new HashMap<int[], int[]>() {
+            {
+                put(new int[]{0, 2}, new int[]{0, 4});
+                put(new int[]{2, 0}, new int[]{4, 0});
+                put(new int[]{1, 1}, new int[]{2, 2});
+            }});
     }});
     int[][] frogs;
 
@@ -28,12 +112,26 @@ public class FrogArrangement {
              */
     }
 
+    public boolean canHop(int[] from, int[] over, int[] to){
+        /***
+         * need to check 3 things:
+         * if there is a frog that u can hop over:
+         * are there frogs in the from and over position?
+         * AND are there NO frogs in the to position?
+         */
+    }
+
+    public FrogArrangement (int[] from, int[] over, int[] to){
+        // construct the new frog arrangement, jumping from 'from' over 'over' and to 'to'
+        // use constructor, return the resulting arrangement
+    }
         /***
          * TODO: implement additional methods of your choosing
          * As stated in the project description, I had the following additional methods:
          * canHop, hop, isWinningState
          * You choose the methods you want and the signatures that you want for your methods.
          */
+
     public void printFrogs(){
             /***
              * TODO: implement this printFrogs

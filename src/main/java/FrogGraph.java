@@ -55,7 +55,7 @@ public class FrogGraph {
      * frogNeighbors.get(someFrogs) contains otherFrogs, then frogNeighbors.get(otherFrogs)
      * should contain someFrogs
      */
-    HashMap<FrogArrangement, Queue<FrogArrangement>> frogNeighbors;
+    HashMap<FrogArrangement, Queue<FrogArrangement>> frogNeighbors; // adjacent list
     /***
      * You don't *need* to have distFromStarting, but it doesn't hurt, and may be helpful
      * in debugging.  It should give the distance that a frog arrangement is from the startingArrangement.
