@@ -134,6 +134,7 @@ public class FrogArrangement {
         // use constructor, return the resulting arrangement
     }
 
+
     public boolean isWinningState(){
         // check if there is only one frog left
         // can do this by summing all the entries of the adjacency list
