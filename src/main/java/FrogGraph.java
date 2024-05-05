@@ -39,7 +39,8 @@ public class FrogGraph {
             System.out.print(curInt + " ");
         }
     }
-    FrogArrangement startingArrangement; // This will be the starting arrangement from which you create your graph
+    FrogArrangement startingArrangement;
+    // This will be the starting arrangement from which you create your graph
     /***
      * You must use the predecessorMap below.
      * If Arrangement2 was "discovered" by an edge from Arrangement1,

@@ -158,9 +158,29 @@ public class FrogArrangement {
         return true;
     }
 
-    public __(int[] from, int[] over, int[] to){ // is this the hop() method?
-        // construct the new frog arrangement, that performs the hop, jumping from 'from' over 'over' and to 'to'
-        // use constructor, return the resulting arrangement
+    /***
+     * hop(): creates a new FrogArrangement object that represents the setup/board positioning
+     * after a frog has made a hop from one position to another
+     * @param from - the position of the frog intending to hop
+     * @param over - the position that the frog will hop over
+     * @param to - the destination position where the frog will land the hop
+     * @return - the new FrogArrangement object that's the resulting arrangement after the hop
+     */
+    public FrogArrangement hop(int[] from, int[] over, int[] to){
+        // deep copy of frogs >> newFrogs
+        int[][] newFrogs = new int[frogs.length][frogs[0].length];
+        for(int i = 0; i < frogs.length; i++) {
+            for(int j = 0; j <frogs[i].length; j++) {
+                newFrogs[i][j] = frogs[i][j];
+            }
+        }
+
+        // updating positions to show hop
+        newFrogs[from[0]][from[1]] = 0; // removing frog from 'from' position
+        newFrogs[over[0]][over[1]] = 0; // removing the frog at the 'over' position (that we jumped over)
+        newFrogs[to[0]][to[1]] = 1; // placing frog at the 'to' position where it landed
+
+        return new FrogArrangement(newFrogs);
     }
 
     public boolean isWinningState(){
