@@ -87,20 +87,22 @@ public class FrogGraph {
         Queue<FrogArrangement> bfsQueue = new ArrayDeque<>();
         bfsQueue.add(curFrogs); // all setting us up to do a bfs
 
-        // do the following in a while loop (while the bfsQueue is not empty):
-        // remove from queue and do the following:
-        for (int[] from : FrogArrangement.hopOptions.keySet()){
-            for (int[] over : FrogArrangement.hopOptions.get(from).keySet()){
-                int[] to = FrogArrangement.hopOptions.get(from).get(over);
-                // can we do that hop on curFrogs? (call canHop() method from FrogArrangement)
-                // if yes (it can hop): create newFrogs by doing the hop
-                // if newFrogs has not been seen before (aka must check if newFrogs is a key in the predecessor Map)
+        while(!bfsQueue.isEmpty()) {
+            FrogArrangement current = bfsQueue.poll(); // removing form queue
+
+            for (int[] from : FrogArrangement.hopOptions.keySet()) {
+                for (int[] over : FrogArrangement.hopOptions.get(from).keySet()) {
+                    int[] to = FrogArrangement.hopOptions.get(from).get(over);
+                    // can we do that hop on curFrogs? (call canHop() method from FrogArrangement)
+                    // if yes (it can hop): create newFrogs by doing the hop
+                    // if newFrogs has not been seen before (aka must check if newFrogs is a key in the predecessor Map)
                     // add it to bfsQueue
                     // add curFrogs as its predecessor
                     // check to see if it is a winning state (if so, add to winning Arrangements)
                     // create Queue in the neighborMap, corresponding to key newFrogs
-                // add newFrogs as neighbor of curFrogs
-                // add curFrogs as neighbor of newFrogs
+                    // add newFrogs as neighbor of curFrogs
+                    // add curFrogs as neighbor of newFrogs
+                }
             }
         }
 
