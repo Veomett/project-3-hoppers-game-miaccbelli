@@ -14,97 +14,79 @@ public class FrogArrangement {
 
         put(new int[]{0, 2}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{0, 0}, new int[]{0, 2});
-                put(new int[]{0, 4}, new int[]{0, 2});
+                put(new int[]{1, 1}, new int[]{2, 0});
+                put(new int[]{1, 3}, new int[]{2, 4});
                 put(new int[]{2, 2}, new int[]{4, 2});
             }});
 
         put(new int[]{0, 4}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{0, 2}, new int[]{0, 4});
-                put(new int[]{2, 0}, new int[]{4, 0});
-                put(new int[]{1, 1}, new int[]{2, 2});
+                put(new int[]{2, 4}, new int[]{4, 4});
+                put(new int[]{0, 2}, new int[]{0, 0});
+                put(new int[]{1, 3}, new int[]{2, 2});
             }});
 
         put(new int[]{1, 1}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{0, 0}, new int[]{0, 2});
-                put(new int[]{0, 2}, new int[]{0, 4});
-                put(new int[]{2, 0}, new int[]{2, 2});
-                put(new int[]{2, 2}, new int[]{2, 4});
-                put(new int[]{1, 3}, new int[]{2, 2});
-                put(new int[]{3, 1}, new int[]{2, 2});
-                put(new int[]{3, 3}, new int[]{2, 2});
-                put(new int[]{2, 4}, new int[]{3, 3});
-                put(new int[]{4, 0}, new int[]{3, 1});
-                put(new int[]{4, 2}, new int[]{3, 3});
-                put(new int[]{4, 4}, new int[]{3, 3});
+                put(new int[]{2, 2}, new int[]{3, 3});
             }});
 
         put(new int[]{1, 3}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{0, 2}, new int[]{0, 4});
-                put(new int[]{2, 2}, new int[]{4, 2});
-                put(new int[]{2, 4}, new int[]{4, 4});
+                put(new int[]{2, 2}, new int[]{3, 1});
             }});
 
         put(new int[]{2, 0}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{0, 0}, new int[]{2, 0});
-                put(new int[]{0, 2}, new int[]{2, 2});
+                put(new int[]{1, 1}, new int[]{0, 2});
+                put(new int[]{3, 1}, new int[]{4, 2});
                 put(new int[]{2, 2}, new int[]{2, 4});
             }});
 
         put(new int[]{2, 2}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{0, 0}, new int[]{2, 0});
-                put(new int[]{0, 2}, new int[]{2, 4});
-                put(new int[]{0, 4}, new int[]{2, 4});
-                put(new int[]{1, 1}, new int[]{0, 0});
-                put(new int[]{1, 3}, new int[]{0, 4});
-                put(new int[]{3, 1}, new int[]{4, 0});
                 put(new int[]{3, 3}, new int[]{4, 4});
-                put(new int[]{4, 2}, new int[]{2, 2});
+                put(new int[]{3, 1}, new int[]{4, 0});
+                put(new int[]{1, 3}, new int[]{0, 4});
+                put(new int[]{1, 1}, new int[]{0, 0});
             }});
 
         put(new int[]{2, 4}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{0, 2}, new int[]{0, 4});
-                put(new int[]{2, 2}, new int[]{4, 2});
-                put(new int[]{2, 4}, new int[]{4, 4});
+                put(new int[]{1, 3}, new int[]{0, 2});
+                put(new int[]{2, 2}, new int[]{2, 0});
+                put(new int[]{3, 3}, new int[]{4, 2});
             }});
 
         put(new int[]{3, 1}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{1, 1}, new int[]{3, 1});
-                put(new int[]{1, 3}, new int[]{3, 3});
-                put(new int[]{3, 3}, new int[]{3, 1});
+                put(new int[]{2, 2}, new int[]{1, 3});
             }});
 
         put(new int[]{3, 3}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{1, 1}, new int[]{3, 1});
-                put(new int[]{1, 3}, new int[]{3, 3});
-                put(new int[]{3, 1}, new int[]{3, 3});
+                put(new int[]{2, 2}, new int[]{1, 1});
             }});
 
         put(new int[]{4, 0}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{2, 0}, new int[]{4, 0});
-                put(new int[]{2, 2}, new int[]{4, 2});
+                put(new int[]{2, 0}, new int[]{0, 0});
+                put(new int[]{3, 1}, new int[]{2, 2});
+                put(new int[]{4, 2}, new int[]{4, 4});
             }});
 
         put(new int[]{4, 2}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{2, 2}, new int[]{4, 2});
-                put(new int[]{2, 4}, new int[]{4, 4});
-                put(new int[]{4, 0}, new int[]{4, 2});
+                put(new int[]{3, 1}, new int[]{2, 0});
+                put(new int[]{2, 2}, new int[]{0, 2});
+                put(new int[]{3, 3}, new int[]{2, 4});
             }});
 
         put(new int[]{4, 4}, new HashMap<int[], int[]>() {
             {
-                put(new int[]{2, 2}, new int[]{4, 2});
-                put(new int[]{2, 4}, new int[]{4, 4});
+                put(new int[]{4, 2}, new int[]{4, 0});
+                put(new int[]{3, 3}, new int[]{2, 2});
+                put(new int[]{2, 4}, new int[]{0, 4});
             }});
     }});
     int[][] frogs;
