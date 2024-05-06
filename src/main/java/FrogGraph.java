@@ -138,7 +138,7 @@ public class FrogGraph {
             return;
         }
 
-        Stack<Integer> movesStack = new Stack<>(); // creating a stack to store & print the moves/steps
+        Stack<FrogArrangement> movesStack = new Stack<>(); // creating a stack to store & print the moves/steps
         System.out.println("Number of different ending states: " + winningArrangements.size() +".");
 
         for(FrogArrangement winningArrangement : winningArrangements) {
@@ -152,12 +152,9 @@ public class FrogGraph {
             FrogArrangement curArrangement = winningArrangement;
             while(predecessorMap.containsKey(curArrangement)) {
                 FrogArrangement predecessor = predecessorMap.get(curArrangement);
-                predecessor.printFrogs();
+                movesStack.push(predecessor);
+                movesStack.push(startingArrangement);
 
-                /** for(String move : moves) {
-                    movesStack.push(move);
-                }
-                 */
                 curArrangement = predecessor;
             }
 
