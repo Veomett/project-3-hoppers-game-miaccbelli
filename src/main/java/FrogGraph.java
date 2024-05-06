@@ -85,7 +85,7 @@ public class FrogGraph {
      * createGraph(): uses a BFS search method to explore all possible frog arrangements from the
      * starting arrangement, and using the predecessor map, it keeps track of which arrangement came
      * before each new arrangement, frog neighbors tells us which frog arrangements are
-     * connected/neighbors, and we call isWinningArrangement from the frogArrangement class to
+     * connected/neighbors, and we call isWinningState from the frogArrangement class to
      * determine if there is 1 frog left and adds this new arrangement to the winningArrangements queue
      *
      * @param frog - the starting frog arrangement
