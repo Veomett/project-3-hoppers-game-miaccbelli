@@ -127,13 +127,6 @@ public class FrogArrangement {
 
 
     /***
-     * TODO: implement additional methods of your choosing
-     * As stated in the project description, I had the following additional methods:
-     * canHop, hop, isWinningState
-     * You choose the methods you want and the signatures that you want for your methods.
-     */
-
-    /***
      * canHop(): boolean function that checks if a frog can hop from one position to the next using the
      * following checks: 1) if there is a position of the frog to hop from 'from' to 'over',
      * 2) if there are frogs in the from and over positions, 3) if the 'to' position is empty so the frog can land the hop
@@ -183,29 +176,46 @@ public class FrogArrangement {
         return new FrogArrangement(newFrogs);
     }
 
+    /**
+     * isWinningState(): checks there is only 1 frog on the board but summing all the
+     * entries of the frogs array and making sure there is only one to ensure it is a
+     * winning arrangement
+     * @return - true if there is only 1 frog, false otherwise
+     */
     public boolean isWinningState(){
-        // check if there is only one frog left
-        // can do this by summing all the entries of the adjacency list
-        // if it equals 1, then it is a winning arrangement
-        // if anything else, then it is not a winning arrangement
+        int totalFrogs = 0;
+        for(int i = 0; i < frogs.length; i++) {
+            for(int j = 0; j < frogs[i].length; j++) {
+                if(frogs[i][j] == 1) { // increment when position has a frog (being 1)
+                    totalFrogs++;
+                }
+            }
+        }
+        return totalFrogs == 1; // returns true when total only == 1
     }
 
+    /***
+     * printFrogs(): prints out the current arrangement (5x5 2D array) of frogs on the board
+     */
     public void printFrogs(){
-            /***
-             * TODO: implement this printFrogs
-             * See the Project Description on Canvas to see how it should look.
-             */
+        for(int i = 0; i < frogs.length; i++) { // i = rows, j = colums
+            System.out.print("["); // opening bracket
+            for(int j = 0; j < frogs[i].length; j++) {
+                System.out.print(frogs[i][j]); // printing the value (1 or 0) at current position
+                if(j < frogs[i].length - 1) {
+                    System.out.print(","); // printing comma after each value except the last value
+                }
+            }
+            System.out.println("]"); // closing bracket
+        }
     }
 
 
     /***
      * TODO: DO NOT TOUCH THESE, ONLY ADD JAVADOC NOTES FOR EACH METHOD
+     *
      */
     private int calculateHash(int[][] f){
-            /***
-             * TODO: DO NOT TOUCH THIS METHOD!
-             * But please do briefly describe what it is doing using javadoc documentation.
-             */
         int hash = 0;
         for (int i=0; i<5; i++){
             for (int j=0; j<5; j++){
@@ -214,6 +224,12 @@ public class FrogArrangement {
         }
         return hash;
     }
+
+    /***
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
             /***
@@ -231,6 +247,11 @@ public class FrogArrangement {
         int thisHash = calculateHash(this.frogs);
         return (thisHash == thatHash);
     }
+
+    /***
+     *
+     * @return
+     */
     @Override
     public int hashCode() {
         /***
