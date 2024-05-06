@@ -109,6 +109,7 @@ public class FrogArrangement {
     }});
     int[][] frogs;
 
+
     /***
      * FrogArrangement(): creates a new FrogArrangement object using the given frogs configuration (inputFrogs)
      * @param inputFrogs - initial configuration of the frogs in the 5x5 2D array that represents the
