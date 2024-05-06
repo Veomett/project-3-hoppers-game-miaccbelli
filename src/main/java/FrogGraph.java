@@ -108,12 +108,12 @@ public class FrogGraph {
 
                     // can we do that hop on curFrogs? (call canHop() method from FrogArrangement)
                     if (current.canHop(from, over, to)) {
-                        FrogArrangement newFrogs = hop(current, from, over, to); // making new arrangement to show hop
+                        FrogArrangement newFrogs = current.hop(from, over, to); // making new arrangement to show hop
 
                         if (!predecessorMap.containsKey(newFrogs)) { // if newFrogs has not been seen before (must check if newFrogs is a key in the predecessor Map)
                             bfsQueue.add(newFrogs); // add new frogs to bfsQueue
                             predecessorMap.put(newFrogs, current); // mark predecessor
-                            if (FrogArrangement.isWinningState(newFrogs)) {
+                            if (newFrogs.isWinningState()) {
                                 winningArrangements.offer(newFrogs); // adding newFrogs to the winnningArrangement queue
                             }
                             frogNeighbors.put(newFrogs, new ArrayDeque<>()); // making new Queue in the neighborMap, corresponding to key newFrogs
@@ -171,16 +171,30 @@ public class FrogGraph {
 
     }
 
+    /***
+     * areAdjacent(): tells us whether two frog arrangements are adjacent to each other by 1 hop or position
+     * @param frogs1 - one frog arrangement in the comparison
+     * @param frogs2 - the other frog arrangement to compare with frogs1
+     * @return - true if frogs are adjacent to each other, false otherwise
+     */
     public boolean areAdjacent(FrogArrangement frogs1, FrogArrangement frogs2){
-        /***
-         * TODO: implement this method.
-         * Should return true if you can get to the arrangement frogs1 from frogs2
-         * with a single hop OR if you can get to the arrangement frogs2 from frogs1
-         * with a single hop.  In other words, remember that this is an undirected graph.
-         * This method isn't explicitly needed to create the graph, but it is generally
-         * part of the graph ADT, and it will help you get partial credit if you don't
-         * fully complete the project
-         */
+        if (!frogNeighbors.containsKey(frogs1) || !frogNeighbors.containsKey(frogs2)) {
+            return false; // false if 1 or both of the frog arrangements are not in the graph
+        }
+        Queue<FrogArrangement> neighbors = frogNeighbors.get(frogs1); // grabbing neighbors of frogs1
+        while (!neighbors.isEmpty()) {
+            FrogArrangement neighbor = neighbors.poll();
+            if (neighbor.equals(frogs2)) {
+                int diffCount = 0; // checking if frogs1 and frogs2 is one position away from each other
+                for (int i = 0; i < frogs1.size(); i++) {
+                    if (frogs1.get(i) != frogs2.get(i)) {
+                        diffCount++;
+                    }
+                }
+                return diffCount == 1; //  true if they are apart by one position
+            }
+        }
+
         return false;
     }
 
