@@ -152,7 +152,7 @@ public class FrogGraph {
             FrogArrangement curArrangement = winningArrangement;
             while(predecessorMap.containsKey(curArrangement)) {
                 FrogArrangement predecessor = predecessorMap.get(curArrangement);
-                List<String> moves = getMoves(predecessor, curArrangement);
+                List<String> moves = curArrangement.get(predecessor);
                 for(String move : moves) {
                     movesStack.push(move);
                 }
@@ -183,15 +183,17 @@ public class FrogGraph {
         Queue<FrogArrangement> neighbors = frogNeighbors.get(frogs1); // grabbing neighbors of frogs1
 
         while (!neighbors.isEmpty()) {
-            FrogArrangement neighbor = neighbors.poll();
+            FrogArrangement neighbor = neighbors.poll(); // pulling 1st element
             if (neighbor.equals(frogs2)) {
                 int diffCount = 0; // checking if frogs1 and frogs2 is one position away from each other
+                /***
                 for (int i = 0; i < frogs1.size(); i++) {
                     if (frogs1.get(i) != frogs2.get(i)) {
                         diffCount++;
                     }
                 }
                 return diffCount == 1; //  true if they are apart by one position
+                 */
             }
         }
 
