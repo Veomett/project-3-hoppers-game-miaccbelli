@@ -138,12 +138,12 @@ public class FrogGraph {
             return;
         }
 
-        Deque<String> movesStack = new ArrayDeque<>(); // creating a stack to store & print the moves/steps
+        Stack<Integer> movesStack = new Stack<>(); // creating a stack to store & print the moves/steps
         System.out.println("Number of different ending states: " + winningArrangements.size() +".");
 
         for(FrogArrangement winningArrangement : winningArrangements) {
             System.out.println("This arrangement: ");
-            System.out.println(winningArrangement);
+            winningArrangement.printFrogs();
 
             int distance = distFromStarting.get(winningArrangement);
             System.out.println("Has distance " + distance + " from the starting position.");
@@ -152,10 +152,12 @@ public class FrogGraph {
             FrogArrangement curArrangement = winningArrangement;
             while(predecessorMap.containsKey(curArrangement)) {
                 FrogArrangement predecessor = predecessorMap.get(curArrangement);
-                List<String> moves = curArrangement.get(predecessor);
-                for(String move : moves) {
+                predecessor.printFrogs();
+
+                /** for(String move : moves) {
                     movesStack.push(move);
                 }
+                 */
                 curArrangement = predecessor;
             }
 
