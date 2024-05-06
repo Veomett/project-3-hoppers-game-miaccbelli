@@ -119,6 +119,10 @@ public class FrogArrangement {
      * @return false when a condition is not met (can't hop), true when all conditions are met and a frog can hop
      */
     public boolean canHop(int[] from, int[] over, int[] to){
+        if (frogs[from[0]][from[1]] == 1 && frogs[over[0]][over[1]] == 1 && frogs[to[0]][to[1]] == 0) {
+            return true;
+        }
+        /**
         // checks if a key corresponds to the 'from' position and if that key's value contains the 'over' position as another key
         if (!hopOptions.containsKey(from) || !hopOptions.get(from).containsKey(over)) {
             return false; // false if there is no position to hop over a frog
@@ -131,7 +135,8 @@ public class FrogArrangement {
         if (frogs[to[0]][to[1]] != 0) {
             return false; // false if a frog is in the destination to position that prevents the hop
         }
-        return true;
+         */
+        return false;
     }
 
     /***

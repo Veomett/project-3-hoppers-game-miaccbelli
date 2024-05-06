@@ -97,6 +97,10 @@ public class FrogGraph {
         Queue<FrogArrangement> bfsQueue = new ArrayDeque<>();
         bfsQueue.add(curFrogs); // all setting us up to do a bfs
 
+        if (curFrogs.isWinningState()) {
+            winningArrangements.offer(curFrogs);
+        }
+
         while (!bfsQueue.isEmpty()) {
             FrogArrangement current = bfsQueue.poll(); // removing form queue
 
