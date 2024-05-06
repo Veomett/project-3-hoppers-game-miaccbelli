@@ -74,12 +74,11 @@ public class FrogGraph {
     Queue<FrogArrangement> winningArrangements = new ArrayDeque<>();
 
     FrogGraph(FrogArrangement frog) {
-        /***
-         * TODO: Complete this constructor
-         * The parameter frog is the startingArrangement for this graph.
-         * This constructor must call createGraph, which will populate:
-         * predecessorMap, frogNeighbors, distFromStarting (if used), and winningArrangements
-         */
+        this.startingArrangement = frog;
+        this.predecessorMap = new HashMap<>();
+        this.frogNeighbors = new HashMap<>();
+        this.distFromStarting = new HashMap<>();
+        createGraph(frog);
     }
 
     /***
