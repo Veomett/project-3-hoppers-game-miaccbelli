@@ -212,8 +212,10 @@ public class FrogArrangement {
 
 
     /***
-     * TODO: DO NOT TOUCH THESE, ONLY ADD JAVADOC NOTES FOR EACH METHOD
-     *
+     * calculateHash(): calculates the hash value of the current frog arrangement
+     * @param f - the 5x5 2D array of the frog arrangement where 1 is a frog and 0 is an empty space
+     * @return - the hash value of the current frog arrangement
+     * TODO: DO NOT TOUCH THIS METHOD!
      */
     private int calculateHash(int[][] f){
         int hash = 0;
@@ -226,16 +228,16 @@ public class FrogArrangement {
     }
 
     /***
-     *
-     * @param o
-     * @return
+     * equals(): checks if another instance of the FrogArrangement class and has the same hash
+     * value as 'this' object's hash value
+     * @param o - the object being compared with 'this' object
+     * @return - true if o is the same object as 'this' object, or if o is an instance of the
+     * FrogArrangement class AND has the same hash value - both meaning they are equal, false otherwise
+     * or if o is null or not an instance of the frogArrangement class
+     * TODO: DO NOT TOUCH THIS METHOD!
      */
     @Override
     public boolean equals(Object o) {
-            /***
-             * TODO: DO NOT TOUCH THIS METHOD!
-             * But please do briefly describe what it is doing using javadoc documentation.
-             */
         if (this == null)
             return false;
         if (this == o)
@@ -249,15 +251,12 @@ public class FrogArrangement {
     }
 
     /***
-     *
-     * @return
+     * hashCode(): calculates the hash code value for the object/instance of the frogArrangement class
+     * @return - the hash code value calculated based on the current frog arrangement
+     * TODO: DO NOT TOUCH THIS METHOD!
      */
     @Override
     public int hashCode() {
-        /***
-         * TODO: DO NOT TOUCH THIS METHOD!
-         * But please do briefly describe what it is doing using javadoc documentation.
-         */
         return calculateHash(this.frogs);
     }
 }
