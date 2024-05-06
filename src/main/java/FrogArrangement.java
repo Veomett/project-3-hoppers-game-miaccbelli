@@ -111,8 +111,8 @@ public class FrogArrangement {
 
     /***
      * canHop(): boolean function that checks if a frog can hop from one position to the next using the
-     * following checks: 1) if there is a position of the frog to hop from 'from' to 'over',
-     * 2) if there are frogs in the from and over positions, 3) if the 'to' position is empty so the frog can land the hop
+     * following checks: 1) if there are frogs in the from and over positions,
+     * 2) if the 'to' position is empty so the frog can land the hop
      * @param from - the position of the frog intending to hop
      * @param over - the position that the frog will hop over
      * @param to - the destination position where the frog will land the hop
