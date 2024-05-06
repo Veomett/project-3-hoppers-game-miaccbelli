@@ -182,6 +182,7 @@ public class FrogGraph {
             return false; // false if 1 or both of the frog arrangements are not in the graph
         }
         Queue<FrogArrangement> neighbors = frogNeighbors.get(frogs1); // grabbing neighbors of frogs1
+
         while (!neighbors.isEmpty()) {
             FrogArrangement neighbor = neighbors.poll();
             if (neighbor.equals(frogs2)) {
@@ -196,14 +197,16 @@ public class FrogGraph {
         }
 
         return false;
-    }
+    } // USE .EQUALS()
 
+    /***
+     * loadFrogs(): loads frog arrangements from file, calculates the number of winning
+     * arrangements using a frogGraph, and stores/returns this info in a deque
+     * @param frogFilename - filename of the file with the frog arrangements
+     * @return - a deque containing the number of winning arrangements for each frog arrangement
+     * TODO: DON'T TOUCH!
+     */
     public static ArrayDeque<Integer> loadFrogs(String frogFilename) {
-        /***
-         * TODO: Describe this method with javadoc style documentation, but don't change
-         * This method is just here so that you can do additional debugging checks.
-         * Please do look at it and explain what it does with javadoc style documentation.
-         */
         ArrayDeque<Integer> numOfSolutionsArray = new ArrayDeque<>();
         try {
             FileInputStream inStream = new FileInputStream(frogFilename);
@@ -239,10 +242,13 @@ public class FrogGraph {
         }
     }
 
+    /***
+     * intValue(): converts the string value of a frog position into a integer (either 0 or 1)
+     * @param s - the string value of the frog position (0 = empty, else = frog present)
+     * @return - 0 if the frog position is empty with a "0", or 1 if s has another value showing it's occupied by a frog
+     * TODO: DON'T TOUCH!
+     */
     private static int intValue(String s){
-        /***
-         * TODO: do not change this method, but explain what this method does using javadoc style documentation
-         */
         if (s.equals("0")){
             return 0;
         }
