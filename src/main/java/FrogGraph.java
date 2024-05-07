@@ -190,7 +190,7 @@ public class FrogGraph {
         }
         return false;
 
-    } // USE .EQUALS() - suggested by prof
+    }
 
     /***
      * loadFrogs(): loads frog arrangements from file, calculates the number of winning
