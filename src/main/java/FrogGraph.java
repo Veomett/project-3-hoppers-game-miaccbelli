@@ -91,7 +91,7 @@ public class FrogGraph {
      * @param frog - the starting frog arrangement
      */
     protected void createGraph(FrogArrangement frog) {
-        FrogArrangement curFrogs = startingArrangement;
+        FrogArrangement curFrogs = startingArrangement; // lines 94-98 were given in class
         Queue<FrogArrangement> curQueue = new ArrayDeque<>();
         frogNeighbors.put(curFrogs, curQueue); // adding currFrogs into frog neighbors
         Queue<FrogArrangement> bfsQueue = new ArrayDeque<>();
@@ -105,7 +105,7 @@ public class FrogGraph {
             FrogArrangement current = bfsQueue.poll(); // removing form queue
 
             // iterating over all possible hops in the curr frogArrangement
-            for (int[] from : FrogArrangement.hopOptions.keySet()) {
+            for (int[] from : FrogArrangement.hopOptions.keySet()) { // lines 108-110 were given in class
                 for (int[] over : FrogArrangement.hopOptions.get(from).keySet()) {
                     int[] to = FrogArrangement.hopOptions.get(from).get(over);
 
@@ -185,12 +185,11 @@ public class FrogGraph {
         }
         Queue<FrogArrangement> neighbors = frogNeighbors.get(frogs1); // grabbing neighbors of frogs1
 
-        /***
         while (!neighbors.isEmpty()) {
             FrogArrangement neighbor = neighbors.poll(); // pulling 1st element
             if (neighbor.equals(frogs2)) {
                 int diffCount = 0; // checking if frogs1 and frogs2 is one position away from each other
-
+                /***
                 for (int i = 0; i < frogs1.size(); i++) {
                     if (frogs1.get(i) != frogs2.get(i)) {
                         diffCount++;
