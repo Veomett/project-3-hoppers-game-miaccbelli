@@ -162,13 +162,14 @@ public class FrogGraph {
             while(predecessorMap.containsKey(curArrangement)) { // while num of frog arrangements not null
                 FrogArrangement predecessor = predecessorMap.get(curArrangement);
                 movesStack.push(predecessor);
-
                 curArrangement = predecessor;
             }
 
             while(!movesStack.isEmpty()) {
                 // printing the top of stack and popping it off to move to the move (producing LIFO system)
-                System.out.println(movesStack.pop());
+                FrogArrangement frogArrangement = movesStack.pop();
+                frogArrangement.printFrogs();
+                System.out.println("---");
             }
 
             System.out.println("----------");
