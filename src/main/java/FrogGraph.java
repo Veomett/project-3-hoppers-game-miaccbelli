@@ -189,7 +189,7 @@ public class FrogGraph {
         Queue<FrogArrangement> neighbors = frogNeighbors.get(frogs1); // grabbing neighbors of frogs1
 
         if (neighbors!= null) {
-            return neighbors.contains(frogs2); // true when the frogs1 and frogs2 are neighbors
+            return neighbors.contains(frogs2); // true when the frogs1 and frogs2 are neighbors & in same queue
         }
         return false;
 
