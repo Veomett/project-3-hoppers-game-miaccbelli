@@ -97,8 +97,8 @@ public class FrogGraph {
         Queue<FrogArrangement> bfsQueue = new ArrayDeque<>();
         bfsQueue.add(curFrogs); // all setting us up to do a bfs
 
-        if (curFrogs.isWinningState()) {
-            winningArrangements.offer(curFrogs);
+        if (curFrogs.isWinningState()) { // checks if given startingArrangement is already a winning state
+            winningArrangements.offer(curFrogs); // then adds to winningArrangements
         }
 
         while (!bfsQueue.isEmpty()) {
