@@ -137,6 +137,7 @@ public class FrogGraph {
      * to print all the steps to reach a winning arrangement from the starting arrangement (prints
      * using a stack where the moves are in reverse order (LIFO))
      * @refer - https://www.educative.io/answers/how-to-use-the-stack-class-in-java for stack usage
+     * also i went to prof veomott's office hours to understand how the printing with the stack works
      */
     public void printSolutions(){
         if(winningArrangements.isEmpty()) { // if there are no winning arrangements
