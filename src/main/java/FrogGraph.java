@@ -144,14 +144,18 @@ public class FrogGraph {
         }
 
         Stack<FrogArrangement> movesStack = new Stack<>(); // creating a stack to store & print the moves/steps
-        System.out.println("Number of different ending states: " + winningArrangements.size() +".");
+        System.out.println("Number of different ending states: " + winningArrangements.size());
 
         for(FrogArrangement winningArrangement : winningArrangements) {
             System.out.println("This arrangement: ");
             winningArrangement.printFrogs();
 
-            int distance = distFromStarting.get(winningArrangement);
-            System.out.println("Has distance " + distance + " from the starting position.");
+            Integer distance = distFromStarting.get(winningArrangement);
+            if(distance == null) {
+                System.out.println("Has null distance from the starting position.");
+            } else {
+                System.out.println("Has distance " + distance + " from the starting position.");
+            }
 
             // getting all the moves from the predecessor map and putting into our stack
             FrogArrangement curArrangement = winningArrangement;
@@ -168,9 +172,7 @@ public class FrogGraph {
             }
 
             System.out.println("----------");
-
         }
-
     }
 
     /***
