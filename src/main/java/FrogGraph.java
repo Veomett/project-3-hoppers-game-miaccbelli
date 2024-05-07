@@ -89,6 +89,7 @@ public class FrogGraph {
      * determine if there is 1 frog left and adds this new arrangement to the winningArrangements queue
      *
      * @param frog - the starting frog arrangement
+     * @refer - https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html referenced for hashmap operations
      */
     protected void createGraph(FrogArrangement frog) {
         FrogArrangement curFrogs = startingArrangement; // lines 94-98 were given in class
