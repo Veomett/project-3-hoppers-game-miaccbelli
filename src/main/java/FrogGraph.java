@@ -169,10 +169,8 @@ public class FrogGraph {
                 // printing the top of stack and popping it off to move to the move (producing LIFO system)
                 FrogArrangement frogArrangement = movesStack.pop();
                 frogArrangement.printFrogs();
-                System.out.println("---");
+                System.out.println("------");
             }
-
-            System.out.println("----------");
         }
     }
 
