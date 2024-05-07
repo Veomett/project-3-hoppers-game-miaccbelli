@@ -92,7 +92,7 @@ public class FrogGraph {
      * @refer - https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html referenced for hashmap operations
      */
     protected void createGraph(FrogArrangement frog) {
-        FrogArrangement curFrogs = startingArrangement; // lines 94-98 were given in class
+        FrogArrangement curFrogs = startingArrangement; // lines 95-99 were given in class
         Queue<FrogArrangement> curQueue = new ArrayDeque<>();
         frogNeighbors.put(curFrogs, curQueue); // adding currFrogs into frog neighbors
         Queue<FrogArrangement> bfsQueue = new ArrayDeque<>();
